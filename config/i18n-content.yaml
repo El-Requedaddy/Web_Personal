@@ -1,0 +1,20 @@
+# =============================================================================
+# i18n Content Translations
+# =============================================================================
+# Non-default locale translations for content-level strings.
+# Default locale (es) values come from config/site.yaml — only add overrides here.
+#
+# Structure:
+#   <locale>:
+#     categories:    { <slug>: <translated name> }
+#     series:        { <slug>: { label?, fullName?, description? } }
+#     featuredCategories: { <link>: { label?, description? } }
+# =============================================================================
+
+en:
+  categories:
+    projects: Projects
+
+ja:
+  categories:
+    projects: プロジェクト
