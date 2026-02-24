@@ -154,7 +154,7 @@ const rehypePlugins = [
   ],
 ];
 if (contentConfig.enableShokaAttrs !== false) rehypePlugins.push(rehypeShokaAttrs);
-rehypePlugins.push(rehypeImagePlaceholder);
+rehypePlugins.push([rehypeImagePlaceholder, { base: '/Web_Personal' }]);
 if (contentConfig.enableMath !== false) rehypePlugins.push(rehypeKatex);
 // Encrypted block/post MUST be last rehype plugins — encrypt fully-rendered children
 if (contentConfig.enableEncryptedBlock) {

@@ -87,8 +87,22 @@ function tryTranslate(locale: Locale, key: string, params?: TranslationParams): 
  * getLocaleFromUrl('/zh/post/hello')  // => 'zh' (default — prefix ignored)
  * ```
  */
+/**
+ * Strip the Astro base URL prefix from a pathname.
+ * E.g. '/Web_Personal/en/about' → '/en/about'
+ */
+function stripBase(pathname: string): string {
+  const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+  if (base && base !== '/' && pathname.startsWith(base)) {
+    const stripped = pathname.slice(base.length);
+    return stripped.startsWith('/') ? stripped : `/${stripped}`;
+  }
+  return pathname;
+}
+
 export function getLocaleFromUrl(pathname: string): Locale {
-  const segments = pathname.split('/').filter(Boolean);
+  const cleanPath = stripBase(pathname);
+  const segments = cleanPath.split('/').filter(Boolean);
   const firstSegment = segments[0];
 
   if (firstSegment && firstSegment !== defaultLocale && isLocaleSupported(firstSegment)) {
@@ -135,7 +149,8 @@ export function localizedPath(path: string, locale: Locale = defaultLocale): str
  * ```
  */
 export function stripLocaleFromPath(pathname: string): string {
-  const segments = pathname.split('/').filter(Boolean);
+  const cleanPath = stripBase(pathname);
+  const segments = cleanPath.split('/').filter(Boolean);
   const firstSegment = segments[0];
 
   if (firstSegment && firstSegment !== defaultLocale && isLocaleSupported(firstSegment)) {
@@ -143,7 +158,7 @@ export function stripLocaleFromPath(pathname: string): string {
     return rest ? `/${rest}` : '/';
   }
 
-  return pathname;
+  return cleanPath;
 }
 
 /**

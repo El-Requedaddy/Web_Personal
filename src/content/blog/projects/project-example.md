@@ -4,7 +4,7 @@ link: inventory-management-system
 catalog: true
 date: 2024-06-15 00:00:00
 description: Sistema completo de gestión de inventario desarrollado con React y Node.js, con autenticación JWT y panel administrativo.
-cover: /Web_Personal/img/cover/1.webp
+cover: /img/cover/1.webp
 tags:
   - React
   - Node.js
@@ -51,10 +51,10 @@ Sistema de gestión de inventario desarrollado para optimizar el control de stoc
 ## 📸 Capturas de Pantalla
 
 ### Dashboard Principal
-![Dashboard](/Web_Personal/img/projects/inventory-dashboard.png)
+![Dashboard](/img/projects/inventory-dashboard.png)
 
 ### Gestión de Productos
-![Productos](/Web_Personal/img/projects/inventory-products.png)
+![Productos](/img/projects/inventory-products.png)
 
 ## 💡 Desafíos y Soluciones
 

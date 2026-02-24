@@ -4,7 +4,7 @@ link: 3d-viewer
 catalog: true
 date: 2026-02-24 00:00:00
 description: Motor de renderizado 3D desarrollado en C++ con OpenGL. Soporta carga de modelos con Assimp, iluminación Phong, normal mapping, texturas y una interfaz interactiva con ImGUI.
-cover: /Web_Personal/img/cover/3.webp
+cover: /img/cover/3.webp
 tags:
   - C++
   - OpenGL
@@ -59,7 +59,7 @@ Modelo         ◆── MallaModelo [1..N]
 FileLoader  · · ▶  Renderer   (uso puntual para carga de archivos)
 ```
 
-![Relaciones de clases](/Web_Personal/img/projects/1.webp)
+![Relaciones de clases](/img/projects/1.webp)
 
 ### Renderer
 Clase central del sistema. Gestiona el ciclo de renderizado, los shaders, la cámara, los modelos y las luces. Es un Singleton (`GetInstancia()`), lo que permite acceder a él desde cualquier punto de la aplicación (incluyendo los callbacks de ImGUI e input).

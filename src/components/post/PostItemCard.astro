@@ -3,7 +3,7 @@
 import { Badge } from '@components/ui/badge';
 import { Button } from '@components/ui/button';
 import { Routes } from '@constants/router';
-import { defaultCoverList } from '@constants/site-config';
+import { defaultCoverList, withBase } from '@constants/site-config';
 import { buildCategoryPath, buildTagPath, getCategoryArr, translateCategoryName } from '@lib/content';
 import { displayDate } from '@lib/date';
 import { getLqipProps } from '@lib/lqip';
@@ -39,7 +39,7 @@ const hideCover = hideCoverProp ?? isSimple;
 const { cover, date, categories, title, draft, description, slug, link, tags, wordCount, readingTime, postLocale } = data ?? {};
 
 const locale = getLocaleFromUrl(Astro.url.pathname);
-const finalCover = cover ?? randomCover ?? defaultCoverList[0];
+const finalCover = withBase(cover ?? randomCover ?? defaultCoverList[0]);
 const href = localizedPath(routeBuilder(Routes.Post, { slug, link, title }), locale);
 const isDraft = import.meta.env.DEV && draft === true;
 const isFallback = postLocale != null && locale !== defaultLocale && postLocale !== locale;

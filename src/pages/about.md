@@ -19,7 +19,7 @@ Durante un año tuve el honor de poder estudiar en japón como estudiante de int
 
 Por supuesto, también pude disfrutar de la cultura del entretenimiento que ofrece japón.
 
-![Estación de Sendai](/Web_Personal/img/projects/aboutme1.webp)
+![Estación de Sendai](/img/projects/aboutme1.webp)
 
 Por otro lado, tras cursar asignaturas de japonés en el propio japón, pude elevar mi nivel de dominio sobre el idioma a nivel avanzado. Dichas asignaturas reforzaron mi inmersión y entendimiento sobre el idioma y su gente.
 
@@ -33,7 +33,7 @@ Por otro lado, tras cursar asignaturas de japonés en el propio japón, pude ele
 
 ### Proyectos Destacados
 
-Puedes ver mis trabajos más recientes en la sección de [Proyectos](/Web_Personal/categories/projects), donde exploro desde mecánicas de juegos roguelike hasta motores de renderizado propios.
+Puedes ver mis trabajos más recientes en la sección de [Proyectos](/categories/projects), donde exploro desde mecánicas de juegos roguelike hasta motores de renderizado propios.
 
 ### Contacto
 

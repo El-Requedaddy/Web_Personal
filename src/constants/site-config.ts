@@ -175,6 +175,18 @@ type SocialConfig = {
   rss?: SocialPlatform;
 };
 
+/**
+ * Prepend the Astro base URL to an absolute path.
+ * E.g. withBase('/img/avatar.webp') → '/Web_Personal/img/avatar.webp'
+ */
+export function withBase(path: string): string {
+  const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+  if (!path || !base || base === '') return path;
+  // Avoid double-prefixing
+  if (path.startsWith(base)) return path;
+  return `${base}${path.startsWith('/') ? path : `/${path}`}`;
+}
+
 // Map YAML config to existing types
 export const siteConfig: SiteConfig = {
   title: yamlConfig.site.title,
@@ -182,15 +194,18 @@ export const siteConfig: SiteConfig = {
   subtitle: yamlConfig.site.subtitle,
   name: yamlConfig.site.name,
   description: yamlConfig.site.description,
-  avatar: yamlConfig.site.avatar,
+  avatar: withBase(yamlConfig.site.avatar),
   showLogo: yamlConfig.site.showLogo,
   author: yamlConfig.site.author,
   site: yamlConfig.site.url,
   startYear: yamlConfig.site.startYear,
-  defaultOgImage: yamlConfig.site.defaultOgImage,
+  defaultOgImage: withBase(yamlConfig.site.defaultOgImage),
   keywords: yamlConfig.site.keywords,
   breadcrumbHome: yamlConfig.site.breadcrumbHome,
-  featuredCategories: yamlConfig.featuredCategories,
+  featuredCategories: (yamlConfig.featuredCategories ?? []).map((cat: FeaturedCategory) => ({
+    ...cat,
+    image: withBase(cat.image),
+  })),
   featuredSeries: normalizeFeaturedSeries(yamlConfig.featuredSeries),
 };
 
@@ -205,7 +220,7 @@ export const seoConfig = {
   url: siteConfig.site,
 };
 
-export const defaultCoverList = Array.from({ length: 21 }, (_, index) => index + 1).map((item) => `/img/cover/${item}.webp`);
+export const defaultCoverList = Array.from({ length: 21 }, (_, index) => index + 1).map((item) => withBase(`/img/cover/${item}.webp`));
 
 // Analytics config types
 type AnalyticsConfig = {
