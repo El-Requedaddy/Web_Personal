@@ -4,7 +4,7 @@ link: roguelike-chibi
 catalog: true
 date: 2026-02-24 00:00:00
 description: Videojuego roguelike desarrollado en Unity con IA basada en Context Steering, generación procedural de dungeons, sistema de objetos con Object Pool y diseño chibi de personajes y enemigos.
-cover: /img/cover/1.webp
+cover: /Web_Personal/img/cover/1.webp
 tags:
   - Unity
   - C#

@@ -16,11 +16,11 @@ site:
   subtitle: Desarrollador de Software # 网站副标题
   name: Carlos # 作者名称 - 请修改为你的名字
   description: Portfolio y Blog de Carlos Requena # 网站描述
-  avatar: /img/avatar.webp # 网站头像
+  avatar: /Web_Personal/img/avatar.webp # 网站头像
   showLogo: true # 是否显示 Logo
   author: Carlos Requena # 作者名称 - 请修改为你的名字
   url: https://requenadonacarlos.github.io/Web_Personal # 站点 URL 用于 RSS 和 SEO
-  defaultOgImage: /img/avatar.webp # 默认 Open Graph 图片
+  defaultOgImage: /Web_Personal/img/avatar.webp # 默认 Open Graph 图片
   startYear: 2024 # 建站年份
   timezone: Asia/Shanghai # 时区配置 (IANA 格式)，用于日期显示和处理
   keywords: # SEO 关键词
@@ -76,19 +76,19 @@ categoryMap:
 featuredCategories:
   - link: projects # Categoría de proyectos
     label: Proyectos
-    image: /img/cover/1.webp
+    image: /Web_Personal/img/cover/1.webp
     description: Proyectos de ingeniería y desarrollo
   - link: note # 对应 categoryMap 中 笔记: note
     label: Notas Técnicas
-    image: /img/cover/4.webp
+    image: /Web_Personal/img/cover/4.webp
     description: Documentación técnica y aprendizaje
   - link: note/front-end # 嵌套分类：笔记/前端
     label: Frontend
-    image: /img/cover/11.webp
+    image: /Web_Personal/img/cover/11.webp
     description: Desarrollo frontend
   - link: tools # 对应 categoryMap 中 工具: tools
     label: Herramientas
-    image: /img/cover/2.webp
+    image: /Web_Personal/img/cover/2.webp
     description: Herramientas y utilidades
 
 # =============================================================================
