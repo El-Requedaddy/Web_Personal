@@ -33,7 +33,7 @@ Por otro lado, tras cursar asignaturas de japonés en el propio japón, pude ele
 
 ### Proyectos Destacados
 
-Puedes ver mis trabajos más recientes en la sección de [Proyectos](/categories/projects), donde exploro desde mecánicas de juegos roguelike hasta motores de renderizado propios.
+Puedes ver mis trabajos más recientes en la sección de [Proyectos](/Web_Personal/categories/projects), donde exploro desde mecánicas de juegos roguelike hasta motores de renderizado propios.
 
 ### Contacto
 

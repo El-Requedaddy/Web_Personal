@@ -169,7 +169,7 @@ if (contentConfig.enableCodeMeta !== false) shikiTransformers.push(shokaMetaTran
 // https://astro.build/config
 export default defineConfig({
   site: 'https://requenadonacarlos.github.io',
-  base: process.env.NODE_ENV === 'production' ? '/Web_Personal' : '/',
+  base: '/Web_Personal',
   compressHTML: true,
   markdown: {
     // Enable GitHub Flavored Markdown

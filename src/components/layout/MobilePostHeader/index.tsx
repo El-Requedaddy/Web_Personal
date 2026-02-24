@@ -68,7 +68,7 @@ export function MobilePostHeader({
 
   // Logo component
   const Logo = () => (
-    <a href="/" className="flex items-center gap-1">
+    <a href={import.meta.env.BASE_URL} className="flex items-center gap-1">
       {logoElement === 'svg' && logoSrc ? (
         <img src={logoSrc} alt={siteConfig?.alternate ?? siteConfig?.name} className="h-8" height={32} />
       ) : (

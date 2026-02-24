@@ -99,27 +99,29 @@ export function getLocaleFromUrl(pathname: string): Locale {
 }
 
 /**
- * Generate a locale-aware path.
+ * Generate a locale-aware path, prefixed with the site base URL.
  *
- * - Default locale: no prefix (e.g., '/post/hello')
- * - Other locales: prefixed (e.g., '/en/post/hello')
+ * - Default locale: base + path (e.g., '/Web_Personal/post/hello')
+ * - Other locales: base + locale prefix (e.g., '/Web_Personal/en/post/hello')
  *
  * @example
  * ```ts
- * localizedPath('/post/hello', 'zh')  // => '/post/hello'
- * localizedPath('/post/hello', 'en')  // => '/en/post/hello'
- * localizedPath('/', 'en')            // => '/en'
+ * localizedPath('/post/hello', 'es')  // => '/Web_Personal/post/hello'
+ * localizedPath('/post/hello', 'en')  // => '/Web_Personal/en/post/hello'
+ * localizedPath('/', 'en')            // => '/Web_Personal/en'
  * ```
  */
 export function localizedPath(path: string, locale: Locale = defaultLocale): string {
   // Ensure path starts with /
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  // Get base URL from Astro (e.g. '/Web_Personal') and remove trailing slash
+  const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 
   if (locale === defaultLocale) {
-    return normalizedPath;
+    return `${base}${normalizedPath}`;
   }
 
-  return `/${locale}${normalizedPath}`;
+  return `${base}/${locale}${normalizedPath}`;
 }
 
 /**

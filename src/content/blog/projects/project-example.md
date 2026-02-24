@@ -51,10 +51,10 @@ Sistema de gestión de inventario desarrollado para optimizar el control de stoc
 ## 📸 Capturas de Pantalla
 
 ### Dashboard Principal
-![Dashboard](/img/projects/inventory-dashboard.png)
+![Dashboard](/Web_Personal/img/projects/inventory-dashboard.png)
 
 ### Gestión de Productos
-![Productos](/img/projects/inventory-products.png)
+![Productos](/Web_Personal/img/projects/inventory-products.png)
 
 ## 💡 Desafíos y Soluciones
 

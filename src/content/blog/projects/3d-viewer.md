@@ -59,7 +59,7 @@ Modelo         ◆── MallaModelo [1..N]
 FileLoader  · · ▶  Renderer   (uso puntual para carga de archivos)
 ```
 
-![Relaciones de clases](/img/projects/1.webp)
+![Relaciones de clases](/Web_Personal/img/projects/1.webp)
 
 ### Renderer
 Clase central del sistema. Gestiona el ciclo de renderizado, los shaders, la cámara, los modelos y las luces. Es un Singleton (`GetInstancia()`), lo que permite acceder a él desde cualquier punto de la aplicación (incluyendo los callbacks de ImGUI e input).
