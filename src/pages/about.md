@@ -19,7 +19,7 @@ Durante un año tuve el honor de poder estudiar en japón como estudiante de int
 
 Por supuesto, también pude disfrutar de la cultura del entretenimiento que ofrece japón.
 
-![Estación de Sendai] (img/projects/aboutme1.webp)
+![Estación de Sendai](/img/projects/aboutme1.webp)
 
 ### Habilidades Técnicas
 
