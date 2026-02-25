@@ -110,13 +110,13 @@ featuredCategories:
 # -----------------------------------------------------------------------------
 featuredSeries:
   - slug: weekly # URL 路径: /weekly
-    categoryName: 周刊 # 必须与 categoryMap 中的分类名匹配
-    label: 我的周刊 # 简短名称
-    fullName: 我的技术周刊 # 完整名称
+    categoryName: Semanal # 必须与 categoryMap 中的分类名匹配
+    label: Mi Semanal # 简短名称
+    fullName: Mi Semanal Técnico # 完整名称
     description: | # 支持多行 Markdown
-      这是周刊/系列文章功能的示例配置。
-      你可以用它来发布定期更新的系列内容，如技术周刊、读书笔记系列等。
-      设置 enabled: false 可以关闭此功能。
+      Esta es una configuración de ejemplo para publicaciones semanales o series.
+      Puedes usarlo para publicar contenido periódico, como resúmenes técnicos, notas de lectura, etc.
+      Establece enabled: false para desactivar esta función.
     cover: /img/weekly_header.webp # 系列页面头图
     enabled: true # 启用此系列
     icon: ri:newspaper-line # 导航图标
@@ -200,16 +200,16 @@ social:
 # -----------------------------------------------------------------------------
 friends:
   intro:
-    title: 友情链接 # 页面标题
-    subtitle: 欢迎交换友链！ # 页面副标题
-    applyTitle: 申请友链 # 申请区块标题
-    applyDesc: 请在本页留言，格式如下 # 申请说明
+    title: Amigos # 页面标题
+    subtitle: ¡Bienvenido a intercambiar enlaces! # 页面副标题
+    applyTitle: Solicitar Enlace # 申请区块标题
+    applyDesc: Deja un comentario en esta página con el siguiente formato # 申请说明
     exampleYaml: | # 申请格式示例，会显示在页面上
-      - site: 你的博客名称 # 站点名称
-        url: https://your-blog.com/ # 站点网址
-        owner: 你的昵称 # 昵称
-        desc: 站点简介 # 站点简介
-        image: https://your-blog.com/avatar.jpg # 头像链接
+      - site: Nombre de tu blog # 站点名称
+        url: https://tu-blog.com/ # 站点网址
+        owner: Tu apodo # 昵称
+        desc: Descripción del sitio # 站点简介
+        image: https://tu-blog.com/avatar.jpg # 头像链接
         color: "#ffc0cb" # 主题色（可选）
   data: # 友链列表
     - site: 余弦の博客
@@ -344,7 +344,7 @@ content:
 #   - Remix Icon: https://icon-sets.iconify.design/ri/
 # -----------------------------------------------------------------------------
 navigation:
-  - name: 首页 # 菜单显示名称（nameKey 不存在时的回退文本）
+  - name: Inicio # 菜单显示名称（nameKey 不存在时的回退文本）
     nameKey: nav.home # i18n 翻译 key
     path: / # 链接路径
     icon: ri:home-heart-fill # 图标
@@ -354,35 +354,35 @@ navigation:
     icon: ri:function-fill
   # - name: 书摘
   #   path: /reading
-  - name: 周刊
+  - name: Semanal
     nameKey: nav.weekly
     path: /weekly
     icon: ri:newspaper-line
-  - name: 文章 # 有子菜单时，path 可省略
+  - name: Artículos # 有子菜单时，path 可省略
     nameKey: nav.posts
     icon: ri:quill-pen-ai-fill
     children: # 子菜单列表
-      - name: 分类
+      - name: Categorías
         nameKey: nav.categories
         path: /categories
         icon: ri:grid-fill
-      - name: 标签
+      - name: Etiquetas
         nameKey: nav.tags
         path: /tags
         icon: fa6-solid:tags
-      - name: 归档
+      - name: Archivo
         nameKey: nav.archives
         path: /archives
         icon: ri:archive-2-fill
-  - name: 友链
+  - name: Amigos
     nameKey: nav.friends
     path: /friends
     icon: ri:links-line
-  - name: 关于
+  - name: Sobre mí
     nameKey: nav.about
     path: /about
     icon: fa6-regular:circle-user
-  - name: 歌单
+  - name: Música
     nameKey: nav.music
     path: /music
     icon: ri:music-2-fill

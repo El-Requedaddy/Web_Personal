@@ -1,26 +1,26 @@
 ---
 layout: ../layouts/PageLayout.astro
-title: "歌单"
-description: "我喜欢的音乐"
+title: "Música"
+description: "Mis canciones favoritas"
 ---
 
-这里可以放你喜欢的音乐歌单。
+Aquí puedes poner tus listas de reproducción de música favoritas.
 
-使用 `{% media audio %}` 标签嵌入网易云音乐或 QQ 音乐歌单：
+Usa la etiqueta `{% media audio %}` para incrustar listas de reproducción de NetEase Cloud Music o QQ Music:
 
 ```markdown
 {% media audio %}
-- title: 我的歌单
+- title: Mi lista de reproducción
   list:
-    - https://music.163.com/#/playlist?id=你的歌单ID
+    - https://music.163.com/#/playlist?id=TU_ID_DE_LISTA
 {% endmedia %}
 ```
 
 {% media audio %}
-- title: 诗岸歌单 山山～全是山山～
+- title: Lista de reproducción favorita
   list:
     - https://music.163.com/#/playlist?id=8676645748
-- title: 超かぐや姫！
+- title: Super Kaguya-hime!
   list:
     - https://music.163.com/#/album?id=358640968
 {% endmedia %}
