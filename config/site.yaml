@@ -15,20 +15,23 @@ site:
   alternate: Carlos # 网站英文名称 用于页脚、Logo、@ handle 等
   subtitle: Desarrollador de Software # 网站副标题
   name: Carlos # 作者名称 - 请修改为你的名字
-  description: Portfolio y Blog de Carlos Requena # 网站描述
+  description: Portfolio de Carlos Requena — Desarrollador de Software # 网站描述
   avatar: /img/avatar.webp # 网站头像
   showLogo: true # 是否显示 Logo
   author: Carlos Requena # 作者名称 - 请修改为你的名字
   url: https://requenadonacarlos.github.io/Web_Personal # 站点 URL 用于 RSS 和 SEO
   defaultOgImage: /img/avatar.webp # 默认 Open Graph 图片
   startYear: 2024 # 建站年份
-  timezone: Asia/Shanghai # 时区配置 (IANA 格式)，用于日期显示和处理
+  timezone: Europe/Madrid # 时区配置 (IANA 格式)，用于日期显示和处理
   keywords: # SEO 关键词
-    - 博客
-    - Astro
-    - 技术
-    - 前端
-    # 请根据你的网站内容添加关键词
+    - Carlos Requena
+    - Portfolio
+    - Desarrollador de Software
+    - C++
+    - Unity
+    - OpenGL
+    - Inteligencia Artificial
+    - Videojuegos
   # breadcrumbHome: 首页  # 面包屑导航中首页的显示名称（默认: '首页'）
 
 # =============================================================================
@@ -78,18 +81,6 @@ featuredCategories:
     label: Proyectos
     image: /img/cover/1.webp
     description: Proyectos de ingeniería y desarrollo
-  - link: note # 对应 categoryMap 中 笔记: note
-    label: Notas Técnicas
-    image: /img/cover/4.webp
-    description: Documentación técnica y aprendizaje
-  - link: note/front-end # 嵌套分类：笔记/前端
-    label: Frontend
-    image: /img/cover/11.webp
-    description: Desarrollo frontend
-  - link: tools # 对应 categoryMap 中 工具: tools
-    label: Herramientas
-    image: /img/cover/2.webp
-    description: Herramientas y utilidades
 
 # =============================================================================
 # Featured Series
@@ -108,24 +99,8 @@ featuredCategories:
 #   highlightOnHome: 是否在首页高亮显示最新文章（可选，默认 true，显式设为 false 可禁用）
 #   links: 相关链接配置（可选）
 # -----------------------------------------------------------------------------
-featuredSeries:
-  - slug: weekly # URL 路径: /weekly
-    categoryName: Semanal # 必须与 categoryMap 中的分类名匹配
-    label: Mi Semanal # 简短名称
-    fullName: Mi Semanal Técnico # 完整名称
-    description: | # 支持多行 Markdown
-      Esta es una configuración de ejemplo para publicaciones semanales o series.
-      Puedes usarlo para publicar contenido periódico, como resúmenes técnicos, notas de lectura, etc.
-      Establece enabled: false para desactivar esta función.
-    cover: /img/weekly_header.webp # 系列页面头图
-    enabled: true # 启用此系列
-    icon: ri:newspaper-line # 导航图标
-    links: # 相关链接（可选）
-      github: https://github.com/your-username/your-repo # (可选) GitHub 仓库
-      rss: /rss.xml # (可选) RSS 订阅链接
-      # chrome: https://chromewebstore.google.com/detail/your-extension-id # (可选) 浏览器插件
-      # docs: https://your-docs-url # (可选) 文档链接
-  # 示例：添加第二个系列（取消注释启用）
+featuredSeries: []
+  # 示例：添加系列（取消注释启用）
   # - slug: reading # URL 路径: /reading
   #   categoryName: 书摘
   #   label: 读书笔记
@@ -149,11 +124,15 @@ featuredSeries:
 # -----------------------------------------------------------------------------
 social:
   github:
-    url: https://github.com/your-username # 替换为你的 GitHub 链接
+    url: https://github.com/El-Requedaddy # GitHub
     icon: ri:github-fill # Remix Icon 的 GitHub 图标
     color: '#191717' # (可选) 图标颜色
+  linkedin:
+    url: https://www.linkedin.com/in/carlos-requena-doña-868b9a21a/ # LinkedIn
+    icon: ri:linkedin-box-fill
+    color: '#0A66C2'
   email:
-    url: mailto:your@email.com # 替换为你的邮箱，需加 mailto: 前缀
+    url: mailto:carlos.requena156@gmail.com # Email
     icon: ri:mail-line
     color: '#55acd5'
   # rss:
@@ -179,63 +158,6 @@ social:
   #   url: https://music.163.com/#/user/home?id=your-id
   #   icon: ri:netease-cloud-music-line
   #   color: '#e60026'
-
-# =============================================================================
-# Friends Links
-# 友情链接页面配置 - 展示友链列表和申请说明
-# =============================================================================
-# intro: 页面介绍文字配置
-#   title: 页面标题
-#   subtitle: 页面副标题
-#   applyTitle: 申请区块标题
-#   applyDesc: 申请说明文字
-#   exampleYaml: 申请格式示例（YAML 格式）
-# data: 友链列表数组
-#   - site: 站点名称
-#   - url: 站点地址
-#   - owner: 站长昵称
-#   - desc: 站点描述/简介
-#   - image: 头像图片 URL
-#   - color: (可选) 卡片背景色，十六进制格式
-# -----------------------------------------------------------------------------
-friends:
-  intro:
-    title: Amigos # 页面标题
-    subtitle: ¡Bienvenido a intercambiar enlaces! # 页面副标题
-    applyTitle: Solicitar Enlace # 申请区块标题
-    applyDesc: Deja un comentario en esta página con el siguiente formato # 申请说明
-    exampleYaml: | # 申请格式示例，会显示在页面上
-      - site: Nombre de tu blog # 站点名称
-        url: https://tu-blog.com/ # 站点网址
-        owner: Tu apodo # 昵称
-        desc: Descripción del sitio # 站点简介
-        image: https://tu-blog.com/avatar.jpg # 头像链接
-        color: "#ffc0cb" # 主题色（可选）
-  data: # 友链列表
-    - site: 余弦の博客
-      url: https://blog.cosine.ren
-      owner: cos
-      desc: FE / ACG / 手工 / 深色模式强迫症 / INFP / 兴趣广泛养两只猫的老宅女 / remote
-      image: https://blog.cosine.ren/img/avatar.webp
-      color: '#ed788b'
-    - site: 示例博客 A
-      url: https://example-a.com
-      owner: Alice
-      desc: 一个热爱技术的开发者
-      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Alice
-      color: '#BEDCFF'
-    - site: 示例博客 B
-      url: https://example-b.com
-      owner: Bob
-      desc: 分享生活与技术的小站
-      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Bob
-      color: '#FBC1CC'
-    - site: 示例博客 C
-      url: https://example-c.com
-      owner: Carol
-      desc: 记录学习与成长的地方
-      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Carol
-      color: '#ABDCFF'
 
 # =============================================================================
 # Announcements
@@ -352,40 +274,10 @@ navigation:
     nameKey: nav.projects
     path: /categories/projects
     icon: ri:function-fill
-  # - name: 书摘
-  #   path: /reading
-  - name: Semanal
-    nameKey: nav.weekly
-    path: /weekly
-    icon: ri:newspaper-line
-  - name: Artículos # 有子菜单时，path 可省略
-    nameKey: nav.posts
-    icon: ri:quill-pen-ai-fill
-    children: # 子菜单列表
-      - name: Categorías
-        nameKey: nav.categories
-        path: /categories
-        icon: ri:grid-fill
-      - name: Etiquetas
-        nameKey: nav.tags
-        path: /tags
-        icon: fa6-solid:tags
-      - name: Archivo
-        nameKey: nav.archives
-        path: /archives
-        icon: ri:archive-2-fill
-  - name: Amigos
-    nameKey: nav.friends
-    path: /friends
-    icon: ri:links-line
   - name: Sobre mí
     nameKey: nav.about
     path: /about
     icon: fa6-regular:circle-user
-  - name: Música
-    nameKey: nav.music
-    path: /music
-    icon: ri:music-2-fill
 
 # =============================================================================
 # Christmas/Seasonal Features
@@ -538,7 +430,7 @@ comment:
 # -----------------------------------------------------------------------------
 analytics:
   umami:
-    enabled: true
+    enabled: false
     id: your-umami-id
     endpoint: https://stats.example.com
 
@@ -566,14 +458,8 @@ seo:
 # Christmas/Seasonal Features
 # =============================================================================
 bgm:
-  enabled: true  # (有 audio 时自动启用，显式 false 可禁用)
-  audio:
-    - title: 最爱山山
-      list:
-        - https://music.163.com/playlist?id=8676645748
-    - title: Love Vocaloid
-      list:
-        - https://music.163.com/playlist?id=8882890045
+  enabled: false  # (有 audio 时自动启用，显式 false 可禁用)
+  audio: []
 
 christmas:
   enabled: false # 总开关
@@ -607,7 +493,7 @@ christmas:
 #     - urlTemplate: URL 模板，支持占位符 {path}（文件绝对路径）
 # -----------------------------------------------------------------------------
 dev:
-  localProjectPath: '/Users/yourname/path/to/astro-koharu' # 请修改为你的项目绝对路径
+  localProjectPath: '/Users/requenadonacarlos/Web_Personal' # 请修改为你的项目绝对路径
   contentRelativePath: 'src/content/blog'
   editors:
     - id: vscode

@@ -13,10 +13,7 @@ export const uiStrings = {
   'nav.categories': 'Categorías',
   'nav.tags': 'Etiquetas',
   'nav.archives': 'Archivo',
-  'nav.friends': 'Amigos',
   'nav.about': 'Sobre mí',
-  'nav.music': 'Música',
-  'nav.weekly': 'Semanal',
 
   // ── Common ──────────────────────────────────────────────────
   'common.search': 'Buscar',
@@ -54,6 +51,7 @@ export const uiStrings = {
   'post.seriesNext': 'Siguiente',
   'post.fallbackNotice': 'Este artículo aún no está disponible en {lang}. Mostrando el original.',
   'post.draft': 'Borrador',
+  'post.readingProgress': 'Progreso de lectura',
   'post.pinned': 'Fijado',
   'post.noPostsFound': 'No se encontraron artículos',
 
@@ -89,30 +87,6 @@ export const uiStrings = {
   'search.dialogClose': 'Cerrar',
   'search.dialogSelect': 'Seleccionar',
   'search.dialogOpen': 'Abrir',
-
-  // ── Friends ─────────────────────────────────────────────────
-  'friends.title': 'Amigos',
-  'friends.applyTitle': 'Solicitar enlace de amistad',
-  'friends.siteName': 'Nombre del sitio',
-  'friends.siteUrl': 'URL del sitio',
-  'friends.ownerName': 'Nombre',
-  'friends.siteDesc': 'Descripción',
-  'friends.avatarUrl': 'URL del avatar',
-  'friends.themeColor': 'Color del tema',
-  'friends.submit': 'Enviar',
-  'friends.copySuccess': 'Copiado al portapapeles',
-  'friends.copyFail': 'Error al copiar, cópialo manualmente',
-  'friends.generateFormat': 'Generar formato',
-  'friends.copyFormat': 'Copiar formato',
-  'friends.sitePlaceholder': 'Mi blog',
-  'friends.ownerPlaceholder': 'Tu nombre',
-  'friends.urlPlaceholder': 'https://tu-sitio.com',
-  'friends.descPlaceholder': 'Breve descripción...',
-  'friends.imagePlaceholder': 'https://...',
-  'friends.previewTitle': 'Vista previa de configuración',
-  'friends.copyConfig': 'Copiar configuración',
-  'friends.copiedConfig': '¡Copiado!',
-  'friends.hint': 'Consejo: Copia el código de arriba y pégalo en los comentarios.',
 
   // ── Code Block ──────────────────────────────────────────────
   'code.copy': 'Copiar código',

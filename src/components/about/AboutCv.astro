@@ -1,0 +1,160 @@
+---
+import HomeSider from '@components/layout/HomeSider.astro';
+import Cover from '@components/ui/cover/Cover.astro';
+import { aboutContent } from '@constants/about';
+import { CONTENT_PADDING } from '@constants/layout';
+import { seoConfig, siteConfig, socialConfig, withBase } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
+import { Icon } from 'astro-icon/components';
+import { getLocaleFromUrl, localizedPath } from '@/i18n';
+
+const locale = getLocaleFromUrl(Astro.url.pathname);
+const data = aboutContent[locale] ?? aboutContent.es;
+
+// Contact buttons derived from the site social config (external URLs, no base needed)
+const socialLabels: Record<string, string> = { github: 'GitHub', linkedin: 'LinkedIn', email: 'Email' };
+const contacts = Object.entries(socialConfig).map(([key, cfg]) => ({
+  key,
+  label: socialLabels[key] ?? key,
+  icon: cfg.icon,
+  url: cfg.url,
+}));
+
+const projectsHref = localizedPath('/categories/projects', locale);
+const cvHref = withBase(data.cvHref);
+const avatar = siteConfig.avatar;
+---
+
+<Layout title={`${data.title} | ${seoConfig.title}`} description={data.tagline}>
+  <TwoColumnLayout>
+    <Cover slot="cover" title={data.coverTitle} />
+    <HomeSider slot="sider" />
+    <div class={`shadow-box bg-gradient-start mx-0 flex w-full flex-col gap-10 ${CONTENT_PADDING.standard}`}>
+      <!-- ============================ Hero ============================ -->
+      <section class="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:text-left">
+        <img
+          src={avatar}
+          alt={data.name}
+          width="128"
+          height="128"
+          class="border-border size-28 shrink-0 rounded-full border-4 object-cover shadow-lg sm:size-32"
+        />
+        <div class="flex flex-col gap-2">
+          <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{data.name}</h1>
+          <p class="text-primary text-lg font-semibold">{data.role}</p>
+          <p class="text-muted-foreground max-w-xl text-pretty">{data.tagline}</p>
+          <div class="mt-2 flex flex-wrap justify-center gap-2 sm:justify-start">
+            <a
+              href={cvHref}
+              class="bg-primary text-primary-foreground inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium shadow-sm transition-transform duration-200 hover:scale-105"
+              download
+            >
+              <Icon name="ri:download-2-line" class="size-4" />
+              {data.labels.downloadCv}
+            </a>
+            {
+              contacts.map((c) => (
+                <a
+                  href={c.url}
+                  target={c.key === 'email' ? undefined : '_blank'}
+                  rel="noopener noreferrer"
+                  class="border-border bg-card hover:border-primary hover:text-primary inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-200"
+                >
+                  <Icon name={c.icon} class="size-4" />
+                  {c.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== Narrative ========================== -->
+      <section class="flex flex-col gap-4 text-pretty leading-relaxed">
+        {
+          data.narrative.map((block) => {
+            if (block.type === 'h') {
+              return (
+                <h2 class="border-primary mt-2 border-l-4 pl-3 text-xl font-bold">{block.text}</h2>
+              );
+            }
+            if (block.type === 'img') {
+              return (
+                <figure class="my-2">
+                  <img
+                    src={withBase(block.src)}
+                    alt={block.alt}
+                    loading="lazy"
+                    class="border-border mx-auto max-h-96 w-full rounded-xl border object-cover shadow-md"
+                  />
+                  <figcaption class="text-muted-foreground mt-2 text-center text-sm">{block.alt}</figcaption>
+                </figure>
+              );
+            }
+            return <p class="text-foreground/90">{block.text}</p>;
+          })
+        }
+      </section>
+
+      <!-- =========================== Skills =========================== -->
+      <section class="flex flex-col gap-5">
+        <h2 class="flex items-center gap-2 text-2xl font-bold">
+          <Icon name="ri:sparkling-2-fill" class="text-primary size-6" />
+          {data.labels.skills}
+        </h2>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {
+            data.skills.map((group) => (
+              <div class="border-border bg-card flex flex-col gap-3 rounded-xl border p-4 transition-shadow duration-200 hover:shadow-md">
+                <h3 class="flex items-center gap-2 font-semibold">
+                  <Icon name={group.icon} class="text-primary size-5" />
+                  {group.title}
+                </h3>
+                <ul class="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <li class="bg-muted text-muted-foreground rounded-full px-3 py-1 text-sm">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- ========================= Education ========================= -->
+      <section class="flex flex-col gap-5">
+        <h2 class="flex items-center gap-2 text-2xl font-bold">
+          <Icon name="ri:graduation-cap-fill" class="text-primary size-6" />
+          {data.labels.education}
+        </h2>
+        <ol class="border-border relative ml-3 flex flex-col gap-6 border-l pl-6">
+          {
+            data.education.map((entry) => (
+              <li class="relative">
+                <span class="bg-primary text-primary-foreground absolute -left-[2.15rem] flex size-7 items-center justify-center rounded-full ring-4 ring-[hsl(var(--background))]">
+                  <Icon name={entry.icon} class="size-4" />
+                </span>
+                <p class="text-muted-foreground text-sm font-medium">{entry.period}</p>
+                <h3 class="font-semibold">{entry.title}</h3>
+                <p class="text-primary text-sm">{entry.org}</p>
+                <p class="text-muted-foreground mt-1 text-sm">{entry.description}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <!-- ========================== Projects CTA ========================== -->
+      <section class="flex justify-center">
+        <a
+          href={projectsHref}
+          class="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-full border px-6 py-2.5 font-medium transition-colors duration-200"
+        >
+          <Icon name="ri:function-fill" class="size-5" />
+          {data.labels.viewProjects}
+        </a>
+      </section>
+    </div>
+  </TwoColumnLayout>
+</Layout>

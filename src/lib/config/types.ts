@@ -89,7 +89,7 @@ export interface SocialPlatform {
 export type SocialConfig = Record<string, SocialPlatform>;
 
 // =============================================================================
-// Friends Configuration
+// Friends (markdown friend-links content feature)
 // =============================================================================
 
 export interface FriendLink {
@@ -99,19 +99,6 @@ export interface FriendLink {
   desc: string;
   image: string;
   color?: string;
-}
-
-export interface FriendsIntro {
-  title: string;
-  subtitle?: string;
-  applyTitle?: string;
-  applyDesc?: string;
-  exampleYaml?: string;
-}
-
-export interface FriendsConfig {
-  intro: FriendsIntro;
-  data: FriendLink[];
 }
 
 // =============================================================================
@@ -565,7 +552,6 @@ export interface SiteYamlConfig {
   /** Featured series configuration - supports array (multiple series) or single object (legacy) */
   featuredSeries?: FeaturedSeriesItem[] | FeaturedSeriesItem;
   social?: SocialConfig;
-  friends?: FriendsConfig;
   announcements?: AnnouncementConfig[];
   content?: ContentConfig;
   navigation?: RouterItem[];

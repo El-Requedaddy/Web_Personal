@@ -5,6 +5,7 @@
  * Uses Motion's useScroll for tracking and useSpring for smooth animation.
  */
 
+import { useTranslation } from '@hooks/useTranslation';
 import { motion, useReducedMotion, useScroll, useSpring } from 'motion/react';
 
 interface ProgressCircleProps {
@@ -17,6 +18,7 @@ interface ProgressCircleProps {
 }
 
 export function ProgressCircle({ size = 28, strokeWidth = 2, className }: ProgressCircleProps) {
+  const { t } = useTranslation();
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
 
@@ -37,7 +39,7 @@ export function ProgressCircle({ size = 28, strokeWidth = 2, className }: Progre
       width={size}
       height={size}
       className={className}
-      aria-label="阅读进度"
+      aria-label={t('post.readingProgress')}
       role="progressbar"
       style={{ transform: 'rotate(-90deg)' }}
     >

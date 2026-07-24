@@ -57,7 +57,7 @@ function ButtonLink({ url, label, isActive, children }: ButtonLinkProps) {
 }
 
 const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale }: NavigatorProps) {
-  const { isBeyond, direction } = useScrollTrigger({
+  const { isBeyond, direction, scrollY } = useScrollTrigger({
     triggerDistance: 0.45,
     throttleMs: 80,
   });
@@ -86,6 +86,16 @@ const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale 
       return;
     }
 
+    // Near the very top: always keep the header visible. Trackpad overscroll/elastic
+    // bounce can emit a stray 'down' delta at the top and otherwise leave the header
+    // hidden, blocking the language switcher.
+    const NEAR_TOP_PX = 80;
+    if (scrollY <= NEAR_TOP_PX) {
+      siteHeader?.classList.remove('-translate-y-full');
+      mobileMenuContainer?.classList.remove('-translate-y-full');
+      return;
+    }
+
     // Post page mobile: keep header visible during scroll
     if (isPostPageMobile) {
       if (scrollEndTimerRef.current) {
@@ -111,7 +121,7 @@ const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale 
       siteHeader?.classList.remove('-translate-y-full');
       mobileMenuContainer?.classList.remove('-translate-y-full');
     }
-  }, [direction, isPostPageMobile]);
+  }, [direction, isPostPageMobile, scrollY]);
 
   // Cleanup timer on unmount
   useEffect(() => {

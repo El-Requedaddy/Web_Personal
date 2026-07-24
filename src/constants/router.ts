@@ -11,7 +11,6 @@ export enum Routes {
   About = '/about',
   Categories = '/categories',
   Tags = '/tags',
-  Friends = '/friends',
   Post = '/post',
   Archives = '/archives',
 }
@@ -23,7 +22,6 @@ export const RESERVED_ROUTES = new Set([
   'about',
   'categories',
   'tags',
-  'friends',
   'post',
   'posts',
   'archives',

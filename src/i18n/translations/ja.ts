@@ -14,10 +14,7 @@ export const uiStrings: UIStrings = {
   'nav.categories': 'カテゴリー',
   'nav.tags': 'タグ',
   'nav.archives': 'アーカイブ',
-  'nav.friends': '友達',
   'nav.about': 'ブログについて',
-  'nav.music': '音楽',
-  'nav.weekly': '週刊',
 
   // ── Common ──────────────────────────────────────────────────
   'common.search': '検索',
@@ -55,6 +52,7 @@ export const uiStrings: UIStrings = {
   'post.seriesNext': '次へ',
   'post.fallbackNotice': 'この投稿は「{lang}」では表示できません。元の投稿を表示しています。',
   'post.draft': 'ドラフト',
+  'post.readingProgress': '読書の進捗',
   'post.pinned': '固定済み',
   'post.noPostsFound': '投稿が見つかりません',
 
@@ -90,30 +88,6 @@ export const uiStrings: UIStrings = {
   'search.dialogClose': '閉じる',
   'search.dialogSelect': '選択',
   'search.dialogOpen': '開く',
-
-  // ── Friends ─────────────────────────────────────────────────
-  'friends.title': '友達',
-  'friends.applyTitle': '友達のリンクに適用',
-  'friends.siteName': 'サイト名',
-  'friends.siteUrl': 'サイトのURL',
-  'friends.ownerName': '名前',
-  'friends.siteDesc': '説明',
-  'friends.avatarUrl': 'アバターのURL',
-  'friends.themeColor': 'テーマの色',
-  'friends.submit': '送信',
-  'friends.copySuccess': 'クリップボードにコピーしました',
-  'friends.copyFail': 'コピーに失敗、手動でコピーしてください',
-  'friends.generateFormat': 'フォーマットを生成',
-  'friends.copyFormat': 'フォーマットをコピー',
-  'friends.sitePlaceholder': 'マイブログ',
-  'friends.ownerPlaceholder': 'あなたの名前',
-  'friends.urlPlaceholder': 'https://your-site.com',
-  'friends.descPlaceholder': '簡単な説明...',
-  'friends.imagePlaceholder': 'https://...',
-  'friends.previewTitle': '構成のプレビュー',
-  'friends.copyConfig': '構成をコピー',
-  'friends.copiedConfig': 'コピーしました!',
-  'friends.hint': '説明: 上記のコードをコピーして、下のコメントセクションに貼り付けてください。',
 
   // ── Code Block ──────────────────────────────────────────────
   'code.copy': 'コードをコピー',

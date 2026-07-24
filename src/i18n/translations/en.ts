@@ -14,10 +14,7 @@ export const uiStrings: UIStrings = {
   'nav.categories': 'Categories',
   'nav.tags': 'Tags',
   'nav.archives': 'Archives',
-  'nav.friends': 'Friends',
   'nav.about': 'About',
-  'nav.music': 'Music',
-  'nav.weekly': 'Weekly',
 
   // ── Common ──────────────────────────────────────────────────
   'common.search': 'Search',
@@ -55,6 +52,7 @@ export const uiStrings: UIStrings = {
   'post.seriesNext': 'Next',
   'post.fallbackNotice': 'This post is not yet available in {lang}. Showing the original.',
   'post.draft': 'Draft',
+  'post.readingProgress': 'Reading progress',
   'post.pinned': 'Pinned',
   'post.noPostsFound': 'No posts found',
 
@@ -90,30 +88,6 @@ export const uiStrings: UIStrings = {
   'search.dialogClose': 'Close',
   'search.dialogSelect': 'Select',
   'search.dialogOpen': 'Open',
-
-  // ── Friends ─────────────────────────────────────────────────
-  'friends.title': 'Friends',
-  'friends.applyTitle': 'Apply for Friend Link',
-  'friends.siteName': 'Site Name',
-  'friends.siteUrl': 'Site URL',
-  'friends.ownerName': 'Name',
-  'friends.siteDesc': 'Description',
-  'friends.avatarUrl': 'Avatar URL',
-  'friends.themeColor': 'Theme Color',
-  'friends.submit': 'Submit',
-  'friends.copySuccess': 'Copied to clipboard',
-  'friends.copyFail': 'Copy failed, please copy manually',
-  'friends.generateFormat': 'Generate Format',
-  'friends.copyFormat': 'Copy Format',
-  'friends.sitePlaceholder': 'My Blog',
-  'friends.ownerPlaceholder': 'Your name',
-  'friends.urlPlaceholder': 'https://your-site.com',
-  'friends.descPlaceholder': 'Brief description...',
-  'friends.imagePlaceholder': 'https://...',
-  'friends.previewTitle': 'Config Preview',
-  'friends.copyConfig': 'Copy Config',
-  'friends.copiedConfig': 'Copied!',
-  'friends.hint': 'Tip: Copy the code above and paste it in the comment section below.',
 
   // ── Code Block ──────────────────────────────────────────────
   'code.copy': 'Copy code',

@@ -15,8 +15,6 @@ export type {
   FeaturedSeries,
   FeaturedSeriesLinks,
   FriendLink,
-  FriendsConfig,
-  FriendsIntro,
   RouterItem,
   SiteBasicConfig,
   SiteYamlConfig,
