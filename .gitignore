@@ -35,3 +35,6 @@ pnpm-debug.log*
 
 # Backup files
 backups/
+
+# pnpm regenerates this build-approval scaffold on install; it breaks the pnpm-9 CI deploy
+pnpm-workspace.yaml
