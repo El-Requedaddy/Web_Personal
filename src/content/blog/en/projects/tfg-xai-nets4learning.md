@@ -4,7 +4,7 @@ link: tfg-xai-nets4learning
 catalog: true
 date: 2026-07-31 00:00:00
 description: "Bachelor's thesis: an Explainable AI (XAI) module integrated into the Nets4Learning platform that produces visual explanations of Deep Learning models running entirely in the browser with TensorFlow.js (SHAP and LRP)."
-cover: /img/cover/14.webp
+cover: /img/projects/tfg-simidat.webp
 tags:
   - Bachelor's Thesis
   - Artificial Intelligence
@@ -30,6 +30,8 @@ The project adds an **Explainable AI (XAI)** module to the educational platform 
 [**Try the platform → nets4learnings.netlify.app**](https://nets4learnings.netlify.app)
 
 > Runs from the browser, including mobile. Model training and inference execute on your own device via TensorFlow.js.
+
+📄 **[Download the full thesis (PDF)](/Web_Personal/tfg/Carlos_Requena_TFG.pdf)**
 
 ## 🎯 Motivation and goal
 
@@ -60,7 +62,7 @@ Its main drawback is the **high computational cost** (it requires many model eva
 
 ### Image explanations — superpixels
 
-For image models, explanations are computed over **superpixels** (regions grouped by proximity and colour similarity) instead of thousands of isolated pixels. This yields interpretable heatmaps over a manageable number of visually meaningful regions.
+For image models, explanations are computed over **superpixels** —via the **SLIC** algorithm— (regions grouped by proximity and colour similarity) instead of thousands of isolated pixels, complemented with **facial segmentation** for face-based tasks. This yields interpretable heatmaps over a manageable number of visually meaningful regions.
 
 ## 🏗️ System architecture
 
@@ -84,7 +86,25 @@ The most important design decision was to **decouple** explainability from the m
 
 ## 📅 Methodology
 
-**Agile development based on Scrum**, with **two-week sprints** and progress reviews with the supervisors at the end of each iteration. Version control with **Git/GitHub** (feature branches), **VS Code** as the IDE and **LaTeX/Overleaf** for the report. The work was split across two semesters: the first focused on SHAP (tabular data and images) and the second on adding LRP.
+Development followed an **incremental model**: each increment added explainability to a family of models —tabular data, image classification (**MNIST / KMNIST**), object detection and LRP-based introspection—, with periodic reviews with the supervisors. Version control with **Git/GitHub** (feature branches), **VS Code** as the IDE and **LaTeX/Overleaf** for the report.
+
+## ✅ Conclusions and results
+
+The overall goal was met: **Nets4Learning now accompanies every prediction with a visual explanation computed entirely on the client**, with no server. The specific objectives were fulfilled:
+
+- **SHAP (WebSHAP)** was integrated into every model except digit detection (KMNIST), which uses **LRP** over an introspectable model.
+- The **React UI components** were integrated: the user requests an explanation and visualises it as an importance chart or a heatmap.
+- The module was **validated** with **unit tests** and functional validation on the real application, confirming that the explanations are consistent with the models' behaviour.
+- The biggest challenge was **secure, private client-side execution**, which shaped the choice of techniques and forced compromises (e.g. the approximation in LRP's *pooling* layers).
+
+The architecture was successfully integrated across **object detection, image classification (MNIST/KMNIST) and tabular models**, respecting the *zero-server* constraint and adapting to the multilingual interface (Spanish, English and Japanese).
+
+## 🔭 Future work
+
+- Add new techniques: **Grad-CAM** for convolutional models or **LIME**.
+- Extend **LRP** coverage to more architectures and complex layers.
+- Leverage **WebGPU** and the new client-side inference engines to overcome current performance limits.
+- Move SHAP's heavy computation to **Web Workers** to keep the UI free during longer explanations.
 
 ---
 

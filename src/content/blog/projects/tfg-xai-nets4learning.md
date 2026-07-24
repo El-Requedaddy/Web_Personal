@@ -4,7 +4,7 @@ link: tfg-xai-nets4learning
 catalog: true
 date: 2026-07-31 00:00:00
 description: "Trabajo Fin de Grado: un módulo de Inteligencia Artificial Explicable (XAI) integrado en la plataforma Nets4Learning, que genera explicaciones visuales de modelos de Deep Learning ejecutándose íntegramente en el navegador con TensorFlow.js (SHAP y LRP)."
-cover: /img/cover/14.webp
+cover: /img/projects/tfg-simidat.webp
 tags:
   - TFG
   - Inteligencia Artificial
@@ -30,6 +30,8 @@ El proyecto dota a la plataforma educativa **Nets4Learning** de un módulo de **
 [**Probar la plataforma → nets4learnings.netlify.app**](https://nets4learnings.netlify.app)
 
 > Funciona desde el navegador, también en móvil. El entrenamiento y la inferencia de los modelos se ejecutan en tu propio dispositivo mediante TensorFlow.js.
+
+📄 **[Descargar la memoria completa (PDF)](/Web_Personal/tfg/Carlos_Requena_TFG.pdf)**
 
 ## 🎯 Motivación y objetivo
 
@@ -60,7 +62,7 @@ Su principal inconveniente es el **alto coste computacional** (requiere múltipl
 
 ### Explicaciones sobre imágenes — superpíxeles
 
-Para los modelos de imagen, las explicaciones se calculan sobre **superpíxeles** (regiones agrupadas por proximidad y similitud de color) en lugar de sobre miles de píxeles aislados. Así se obtienen mapas de calor interpretables sobre un número manejable de regiones con significado visual.
+Para los modelos de imagen, las explicaciones se calculan sobre **superpíxeles** —mediante el algoritmo **SLIC**— (regiones agrupadas por proximidad y similitud de color) en lugar de sobre miles de píxeles aislados, complementados con **segmentación facial** para las tareas con rostros. Así se obtienen mapas de calor interpretables sobre un número manejable de regiones con significado visual.
 
 ## 🏗️ Arquitectura del sistema
 
@@ -84,7 +86,25 @@ La decisión de diseño más importante fue **desacoplar** la explicabilidad de 
 
 ## 📅 Metodología
 
-Desarrollo **ágil basado en Scrum**, con **sprints de dos semanas** y revisiones de progreso con los tutores al cierre de cada iteración. Control de versiones con **Git/GitHub** (ramas por funcionalidad), **VS Code** como IDE y **LaTeX/Overleaf** para la memoria. El trabajo se repartió en dos cuatrimestres: el primero centrado en SHAP (datos tabulares e imágenes) y el segundo en la incorporación de LRP.
+Desarrollo siguiendo un **modelo incremental**: cada incremento añadió explicabilidad a una familia de modelos —datos tabulares, clasificación de imágenes (**MNIST / KMNIST**), detección de objetos e introspección con LRP—, con revisiones periódicas con los tutores. Control de versiones con **Git/GitHub** (ramas por funcionalidad), **VS Code** como IDE y **LaTeX/Overleaf** para la memoria.
+
+## ✅ Conclusiones y resultados
+
+Se alcanzó el objetivo general: **Nets4Learning acompaña ahora cada predicción con una explicación visual calculada íntegramente en el cliente**, sin servidor. Cumpliendo los objetivos específicos:
+
+- Se **integró SHAP (WebSHAP)** en todos los modelos salvo la detección de números (KMNIST), que emplea **LRP** sobre un modelo introspectable.
+- Se **integraron los componentes en la interfaz React**: el usuario solicita una explicación y la visualiza como gráfico de importancia o mapa de calor.
+- Se **validó** el módulo con **pruebas unitarias** y validación funcional sobre la aplicación real, comprobando que las explicaciones son coherentes con el comportamiento de los modelos.
+- El mayor reto fue la **ejecución en cliente de forma segura y privada**, que condicionó la elección de técnicas y obligó a decisiones comprometidas (p. ej. la aproximación en las capas de *pooling* de LRP).
+
+La arquitectura se integró con éxito en **detección de objetos, clasificación de imágenes (MNIST/KMNIST) y modelos tabulares**, respetando la restricción *zero-server* y adaptándose a la interfaz multilingüe (español, inglés y japonés).
+
+## 🔭 Líneas de trabajo futuro
+
+- Incorporar nuevas técnicas: **Grad-CAM** para modelos convolucionales o **LIME**.
+- Ampliar la cobertura de **LRP** a más arquitecturas y capas complejas.
+- Aprovechar **WebGPU** y los nuevos motores de inferencia en cliente para superar los límites de rendimiento actuales.
+- Mover el cálculo pesado de SHAP a **Web Workers** para liberar la interfaz durante las explicaciones más largas.
 
 ---
 
